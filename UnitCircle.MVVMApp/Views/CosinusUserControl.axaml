@@ -17,7 +17,8 @@
 		</StackPanel>
 		<!-- Cosinusverlauf -->
 		<Canvas Width="400" Height="300" Margin="65">
-    		<Line StartPoint="0,0" EndPoint="200,200" Stroke="Black" StrokeThickness="2"/>
+			<Line StartPoint="0, 50" EndPoint="0, 150" Stroke="LightGray" StrokeThickness="1"/>
+			<Line StartPoint="-10, 100" EndPoint="800,100" Stroke="LightGray" StrokeThickness="1"/>
 			<Path Data="{Binding WaveGeometry}" Stroke="Green" StrokeThickness="2"/>
 		</Canvas>
 	</StackPanel>

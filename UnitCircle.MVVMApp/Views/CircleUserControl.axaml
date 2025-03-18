@@ -13,11 +13,13 @@
 	
 	<StackPanel Background="WhiteSmoke">
 		<Canvas Width="400" Height="200">
+			<Line StartPoint="200, 100" EndPoint="200, 300" Stroke="LightGray" StrokeThickness="1"/>
+			<Line StartPoint="100, 200" EndPoint="300,200" Stroke="LightGray" StrokeThickness="1"/>
 			<!-- Kreis -->
-			<Path Data="{Binding CircleGeometry}" Stroke="LightGray" StrokeThickness="2"/>
+			<Path Data="{Binding CircleGeometry}" Stroke="Gray" StrokeThickness="2"/>
 
 			<!-- Zeiger -->
-			<Path Data="{Binding PointerGeometry}" Fill="DarkGray" IsVisible="True"/>
+			<Path Data="{Binding PointerGeometry}" Fill="Black" IsVisible="True"/>
 			<Path Data="{Binding LineGeometry}" Stroke="Black" StrokeThickness="2" />
 		</Canvas>
 

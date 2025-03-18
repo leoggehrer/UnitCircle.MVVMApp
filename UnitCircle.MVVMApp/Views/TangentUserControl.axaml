@@ -17,6 +17,8 @@
 		</StackPanel>
 		<!-- Tangensverlauf -->
 		<Canvas Width="400" Height="300" Margin="65">
+			<Line StartPoint="0, -100" EndPoint="0, 300" Stroke="LightGray" StrokeThickness="1"/>
+			<Line StartPoint="-10, 100" EndPoint="800,100" Stroke="LightGray" StrokeThickness="1"/>
 			<Path Data="{Binding WaveGeometry}" Stroke="Red" StrokeThickness="2"/>
 		</Canvas>
 	</StackPanel>
