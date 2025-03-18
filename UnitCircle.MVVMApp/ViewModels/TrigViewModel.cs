@@ -13,10 +13,21 @@ namespace UnitCircle.MVVMApp.ViewModels
         private int _saveRounds = 0;
         private double _frequency = 1.0;
         private double _angle;
+        /// <summary>
+        /// The list of points that make up the wave visualization.
+        /// </summary>
         protected List<Point> _wavePoints = new();
         #endregion fields
 
         #region properties
+        /// <summary>
+        /// Gets or sets the angle in radians. When setting the angle, it ensures that the value
+        /// is normalized to within the range of 0 to 2π radians. If the angle exceeds 2π radians,
+        /// the number of rounds (full rotations) is incremented accordingly.
+        /// </summary>
+        /// <value>
+        /// The angle in radians.
+        /// </value>
         public double Angle
         {
             get => _angle;
@@ -28,6 +39,9 @@ namespace UnitCircle.MVVMApp.ViewModels
                 OnPropertyChanged(nameof(Angle));
             }
         }
+        /// <summary>
+        /// Gets or sets the frequency value, which determines the speed at which the angle is
+        /// </summary>
         public double Frequency
         {
             get => _frequency;
@@ -37,7 +51,9 @@ namespace UnitCircle.MVVMApp.ViewModels
                 OnPropertyChanged(nameof(Frequency));
             }
         }
-
+        /// <summary>
+        /// Gets or sets the number of full rotations that have been completed.
+        /// </summary>
         public int Rounds
         {
             get => _rounds;
@@ -47,6 +63,9 @@ namespace UnitCircle.MVVMApp.ViewModels
                 OnPropertyChanged(nameof(Rounds));
             }
         }
+        /// <summary>
+        /// Gets the X-coordinate of the point on the unit circle corresponding to the current angle.
+        /// </summary>
         public bool IsNewRound
         {
             get
@@ -57,6 +76,9 @@ namespace UnitCircle.MVVMApp.ViewModels
                 return result;
             }
         }
+        /// <summary>
+        /// Gets the Y-coordinate of the point on the unit circle corresponding to the current angle.
+        /// </summary>
         public StreamGeometry WaveGeometry
         {
             get
@@ -79,6 +101,9 @@ namespace UnitCircle.MVVMApp.ViewModels
         #endregion properties
 
         #region methods
+        /// <summary>
+        /// Updates the angle and the wave points based on the current angle and frequency.
+        /// </summary>
         public virtual void Tick()
         {
             Angle += Frequency * 0.1;
@@ -96,7 +121,13 @@ namespace UnitCircle.MVVMApp.ViewModels
             UpdateWavePoints();
             OnPropertyChanged(nameof(WaveGeometry));
         }
+        /// <summary>
+        /// Updates the wave points based on the current angle.
+        /// </summary>
         protected abstract void UpdateWavePoints();
+        /// <summary>
+        /// Resets the angle and the number of rounds to zero.
+        /// </summary>
         public void Reset()
         {
             _newRounds = 0;
