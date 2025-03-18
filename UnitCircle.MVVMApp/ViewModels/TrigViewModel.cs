@@ -8,6 +8,7 @@ namespace UnitCircle.MVVMApp.ViewModels
     public abstract partial class TrigViewModel : ViewModelBase
     {
         #region fields
+        private double _value;
         private int _rounds = 0;
         private int _newRounds = 0;
         private int _saveRounds = 0;
@@ -21,13 +22,20 @@ namespace UnitCircle.MVVMApp.ViewModels
 
         #region properties
         /// <summary>
-        /// Gets or sets the angle in radians. When setting the angle, it ensures that the value
-        /// is normalized to within the range of 0 to 2π radians. If the angle exceeds 2π radians,
-        /// the number of rounds (full rotations) is incremented accordingly.
+        /// Gets or sets the value of the trigonometric function at the current angle.
         /// </summary>
-        /// <value>
-        /// The angle in radians.
-        /// </value>
+        public double Value
+        {
+            get => _value;
+            set
+            {
+                _value = value;
+                OnPropertyChanged(nameof(Value));
+            }
+        }
+        /// <summary>
+        /// Gets or sets the angle value, which determines the position on the unit circle.
+        /// </summary>
         public double Angle
         {
             get => _angle;

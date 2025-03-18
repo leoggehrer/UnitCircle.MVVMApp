@@ -12,12 +12,12 @@
 	</UserControl.DataContext>
 
 	<StackPanel Background="AliceBlue">
-		<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-			<Label Content="Tangens" Foreground="Gray" Margin="0 20 0 0"/>
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+			<TextBlock Text="{Binding Value, StringFormat='Tangens: {0:F2}'}" Foreground="Gray" Margin="20 20 0 0"/>
 		</StackPanel>
 		<!-- Tangensverlauf -->
 		<Canvas Width="400" Height="300" Margin="65">
-			<Line StartPoint="0, -100" EndPoint="0, 300" Stroke="LightGray" StrokeThickness="1"/>
+			<Line StartPoint="0, -50" EndPoint="0, 300" Stroke="LightGray" StrokeThickness="1"/>
 			<Line StartPoint="-10, 100" EndPoint="800,100" Stroke="LightGray" StrokeThickness="1"/>
 			<Path Data="{Binding WaveGeometry}" Stroke="Red" StrokeThickness="2"/>
 		</Canvas>

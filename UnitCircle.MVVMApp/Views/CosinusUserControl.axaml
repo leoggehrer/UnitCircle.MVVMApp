@@ -12,8 +12,8 @@
 	</UserControl.DataContext>
 
 	<StackPanel Background="AliceBlue">
-		<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-			<Label Content="Cosinus" Foreground="Gray" Margin="0 20 0 0"/>
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Left">			
+			<TextBlock Text="{Binding Value, StringFormat='Cosinus: {0:F2}'}" Foreground="Gray" Margin="20 20 0 0"/>
 		</StackPanel>
 		<!-- Cosinusverlauf -->
 		<Canvas Width="400" Height="300" Margin="65">

@@ -13,8 +13,9 @@ namespace UnitCircle.MVVMApp.ViewModels
         /// </summary>
         protected override void UpdateWavePoints()
         {
-            _wavePoints.Add(new Point(_wavePoints.Count * 1, 100 - 50 * Math.Cos(Angle)));
-            System.Diagnostics.Debug.WriteLine($"Cosinus: {Math.Cos(Angle)}");
+            Value = Math.Cos(Angle);
+            _wavePoints.Add(new Point(_wavePoints.Count * 1, 100 - 50 * Value));
+            System.Diagnostics.Debug.WriteLine($"Cosinus: {Value}");
         }
     }
 }
