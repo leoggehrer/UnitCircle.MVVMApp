@@ -11,6 +11,7 @@ namespace UnitCircle.MVVMApp.ViewModels
     public partial class MainWindowViewModel : ViewModelBase
     {
         #region Fields
+        private bool _isRunning = true;
         /// <summary>
         /// The frequency value that is shared across all sub-view models.
         /// </summary>
@@ -64,6 +65,10 @@ namespace UnitCircle.MVVMApp.ViewModels
                 OnPropertyChanged(nameof(Frequency));
             }
         }
+        public string ToggleText
+        {
+            get => _isRunning ? "Pause" : "Start";
+        }
         #endregion Properties
 
         #region Methods
@@ -77,10 +82,13 @@ namespace UnitCircle.MVVMApp.ViewModels
             _timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(16) };
             _timer.Tick += (s, e) =>
             {
-                CircleViewModel.Tick();
-                SinusViewModel.Tick();
-                CosinusViewModel.Tick();
-                TangentViewModel.Tick();
+                if (_isRunning)
+                {
+                    CircleViewModel.Tick();
+                    SinusViewModel.Tick();
+                    CosinusViewModel.Tick();
+                    TangentViewModel.Tick();
+                }
             };
             _timer.Start();
         }
@@ -95,6 +103,12 @@ namespace UnitCircle.MVVMApp.ViewModels
             SinusViewModel.Reset();
             CosinusViewModel.Reset();
             TangentViewModel.Reset();
+        }
+        [RelayCommand]
+        public void Toggle()
+        {
+            _isRunning = !_isRunning;
+            OnPropertyChanged(nameof(ToggleText));
         }
         #endregion Methods
     }

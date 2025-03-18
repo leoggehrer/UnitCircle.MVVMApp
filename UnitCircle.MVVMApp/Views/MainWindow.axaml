@@ -38,9 +38,10 @@
 			<Slider Minimum="0.1" Maximum="2" Value="{Binding Frequency}" Margin="40 5 40 5"/>
 
 			<TextBlock Text="{Binding Frequency, StringFormat='Frequenz: {0:F2}'}" HorizontalAlignment="Center" Margin="0 0 0 10"/>
-			<Button Content="Reset" Command="{Binding ResetCommand}"  HorizontalAlignment="Center" Margin="0 0 0 10"></Button>
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+				<Button Content="Reset" Command="{Binding ResetCommand}"  HorizontalAlignment="Center" Margin="10 0 0 10"></Button>
+				<Button Content="{Binding ToggleText}" Command="{Binding ToggleCommand}"  HorizontalAlignment="Center" Margin="10 0 0 10"></Button>
+			</StackPanel>
 		</StackPanel>
-
-
 	</Grid>
 </Window>
