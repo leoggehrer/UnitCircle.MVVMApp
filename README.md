@@ -9,7 +9,7 @@
 
 ## Aufgabenstellung
 
-Das Projekt **'UnitCircle.MVVMApp'** ist eine Simulation der trigonometrischen Funktion wie der Sinus, Cosinus und Tangens. Im Zentrum ist der Einheitskreis der über einen Taktgeber (16 ms) animiert wird. In Abhängkeit dieses Kreises werden die Funktionen Sinus, Cosinus und Tangens gezeichnet. Die nachfolgende Abbildung soll ein besseres Verständnis zu der Aufgabenstellung vermitteln:
+Das Projekt **'UnitCircle.MVVMApp'** ist eine Simulation der trigonometrischen Funktionen wie der Sinus, Cosinus und Tangens. Im Zentrum steht der Einheitskreis der über einen Taktgeber (16 ms) animiert wird. In Abhängigkeit dieses Kreises werden die Funktionen Sinus, Cosinus und Tangens gezeichnet. Die nachfolgende Abbildung soll ein besseres Verständnis zu der Aufgabenstellung vermitteln:
 
 ![UnitCircle](/img/unitcircle.png)
 
@@ -28,6 +28,6 @@ Das Projekt **'UnitCircle.MVVMApp'** ist eine Simulation der trigonometrischen F
 
 ## Quellen
 
-- keine Angabe
+- Keine Angabe
 
 > **Viel Erfolg!**
