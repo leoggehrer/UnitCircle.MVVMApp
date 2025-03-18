@@ -69,7 +69,7 @@ namespace UnitCircle.MVVMApp.ViewModels
 
         public MainWindowViewModel()
         {
-            Frequency = 0.5;
+            Frequency = 0.25;
             _timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(16) };
             _timer.Tick += (s, e) =>
             {
