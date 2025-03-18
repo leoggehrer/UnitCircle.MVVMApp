@@ -1,0 +1,46 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:UnitCircle.MVVMApp.ViewModels"
+		xmlns:views="using:UnitCircle.MVVMApp.Views"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="850"
+        x:Class="UnitCircle.MVVMApp.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+		Width="1000"
+		Height="800"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="MATH-Einheitskreis">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="280"></ColumnDefinition>
+			<ColumnDefinition></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition></RowDefinition>
+			<RowDefinition></RowDefinition>
+			<RowDefinition Height="Auto"></RowDefinition>
+		</Grid.RowDefinitions>
+
+		<views:CircleUserControl BorderThickness="3" DataContext="{Binding CircleViewModel}" Grid.Column="0" Grid.Row="0"/>
+		<views:SinusUserControl BorderThickness="3" DataContext="{Binding SinusViewModel}" Grid.Column="1" Grid.Row="0"/>
+		<views:CosinusUserControl BorderThickness="3" DataContext="{Binding CosinusViewModel}" Grid.Column="1" Grid.Row="1"/>
+		<views:TangentUserControl BorderThickness="3" DataContext="{Binding TangentViewModel}" Grid.Column="0" Grid.Row="1"/>
+		<StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+
+			<Slider Minimum="0.1" Maximum="2" Value="{Binding Frequency}" Margin="40 5 40 5"/>
+
+			<TextBlock Text="{Binding Frequency, StringFormat='Frequenz: {0:F2}'}" HorizontalAlignment="Center" Margin="0 0 0 10"/>
+			<Button Content="Reset" Command="{Binding ResetCommand}"  HorizontalAlignment="Center" Margin="0 0 0 10"></Button>
+		</StackPanel>
+
+
+	</Grid>
+</Window>

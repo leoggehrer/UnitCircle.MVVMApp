@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="using:UnitCircle.MVVMApp.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 x:DataType="vm:TangentViewModel"
+             x:Class="UnitCircle.MVVMApp.Views.TangentUserControl">
+
+	<UserControl.DataContext>
+		<vm:TangentViewModel />
+	</UserControl.DataContext>
+
+	<StackPanel Background="AliceBlue">
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+			<Label Content="Tangens" Foreground="Gray" Margin="0 20 0 0"/>
+		</StackPanel>
+		<!-- Tangensverlauf -->
+		<Canvas Width="400" Height="300" Margin="65">
+			<Path Data="{Binding WaveGeometry}" Stroke="Red" StrokeThickness="2"/>
+		</Canvas>
+	</StackPanel>
+
+</UserControl>

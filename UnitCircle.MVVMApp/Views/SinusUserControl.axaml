@@ -1,0 +1,23 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="using:UnitCircle.MVVMApp.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 x:DataType="vm:SinusViewModel"
+             x:Class="UnitCircle.MVVMApp.Views.SinusUserControl">
+
+	<UserControl.DataContext>
+		<vm:SinusViewModel />
+	</UserControl.DataContext>
+	
+	<StackPanel Background="AliceBlue">
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+			<Label Content="Sinus" Foreground="Gray" Margin="0 20 0 0"/>
+		</StackPanel>
+		<!-- Sinusverlauf -->
+		<Canvas Width="400" Height="300" Margin="65">
+			<Path Data="{Binding WaveGeometry}" Stroke="Blue" StrokeThickness="2"/>
+		</Canvas>
+	</StackPanel>
+</UserControl>

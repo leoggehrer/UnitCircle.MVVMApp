@@ -1,0 +1,30 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="using:UnitCircle.MVVMApp.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="450"
+			 x:DataType="vm:CircleViewModel"
+             x:Class="UnitCircle.MVVMApp.Views.CircleUserControl">
+
+	<UserControl.DataContext>
+		<vm:CircleViewModel />
+	</UserControl.DataContext>
+	
+	<StackPanel Background="WhiteSmoke">
+		<Canvas Width="400" Height="200">
+			<!-- Kreis -->
+			<Path Data="{Binding CircleGeometry}" Stroke="LightGray" StrokeThickness="2"/>
+
+			<!-- Zeiger -->
+			<Path Data="{Binding PointerGeometry}" Fill="DarkGray" IsVisible="True"/>
+			<Path Data="{Binding LineGeometry}" Stroke="Black" StrokeThickness="2" />
+		</Canvas>
+
+		<StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+			<TextBlock Text="{Binding Angle, StringFormat='Winkel: {0:F2}'}" Foreground="Gray" Margin="0 14 0 0"/>
+			<TextBlock Text="{Binding Rounds, StringFormat='Runden: {0}'}" Foreground="Gray" Margin="0 5 0 0"/>
+		</StackPanel>
+	</StackPanel>
+
+</UserControl>
