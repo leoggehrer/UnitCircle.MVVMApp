@@ -114,6 +114,7 @@ namespace UnitCircle.MVVMApp.ViewModels
         /// </summary>
         public virtual void Tick()
         {
+            int clearRounds = (int)(Frequency / 0.5) * 2 + 1;
             Angle += Frequency * 0.1;
 
             // Update Sin Wave Data
@@ -121,7 +122,7 @@ namespace UnitCircle.MVVMApp.ViewModels
             {
                 _newRounds++;
             }
-            if (_newRounds >= 2)
+            if (_newRounds >= clearRounds)
             {
                 _newRounds = 0;
                 _wavePoints.Clear();
