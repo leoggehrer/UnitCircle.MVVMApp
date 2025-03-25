@@ -13,7 +13,7 @@ Das Projekt **'UnitCircle.MVVMApp'** simuliert trigonometrische Funktionen wie S
 
 Die folgende Abbildung zeigt den Einheitskreis und die zugehörigen Funktionen, um die Aufgabenstellung zu verdeutlichen:
 
-![UnitCircle](/img/unitcircle.png)
+![UnitCircle](img/unitcircle.png)
 
 ### Steuerung der Simulation
 

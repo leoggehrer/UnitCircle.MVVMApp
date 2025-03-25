@@ -17,7 +17,7 @@ namespace UnitCircle.MVVMApp.ViewModels
         /// <summary>
         /// The list of points that make up the wave visualization.
         /// </summary>
-        protected List<Point> _wavePoints = new();
+        protected List<Point> _wavePoints = [];
         #endregion fields
 
         #region properties

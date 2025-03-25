@@ -99,6 +99,10 @@ namespace UnitCircle.MVVMApp.ViewModels
         {
             Angle = 0;
             Rounds = 0;
+            OnPropertyChanged(nameof(X));
+            OnPropertyChanged(nameof(Y));
+            OnPropertyChanged(nameof(PointerGeometry));
+            OnPropertyChanged(nameof(LineGeometry));
         }
     }
 }

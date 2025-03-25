@@ -39,8 +39,9 @@
 
 			<TextBlock Text="{Binding Frequency, StringFormat='Frequenz: {0:F2}'}" HorizontalAlignment="Center" Margin="0 0 0 10"/>
 			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-				<Button Content="Reset" Command="{Binding ResetCommand}"  HorizontalAlignment="Center" Margin="10 0 0 10"></Button>
-				<Button Content="{Binding ToggleText}" Command="{Binding ToggleCommand}"  HorizontalAlignment="Center" Margin="10 0 0 10"></Button>
+				<Button Content="Reset" Command="{Binding ResetCommand}" Margin="10 0 0 10"></Button>
+				<Button Content="{Binding ToggleText}" Command="{Binding ToggleCommand}" MinWidth="60" Margin="10 0 0 10"></Button>
+				<Button Content="Next" Command="{Binding NextCommand}" Margin="10 0 0 10" IsEnabled="{Binding IsNotRunning}"></Button>
 			</StackPanel>
 		</StackPanel>
 	</Grid>

@@ -10,7 +10,7 @@
 	<UserControl.DataContext>
 		<vm:SinusViewModel />
 	</UserControl.DataContext>
-	
+
 	<StackPanel Background="AliceBlue">
 		<StackPanel Orientation="Vertical" HorizontalAlignment="Left">
 			<TextBlock Text="{Binding Value, StringFormat='Sinus: {0:F2}'}" Foreground="Gray" Margin="20 20 0 0"/>
@@ -20,6 +20,9 @@
 			<Line StartPoint="0, 50" EndPoint="0, 150" Stroke="LightGray" StrokeThickness="1"/>
 			<Line StartPoint="-10, 100" EndPoint="800,100" Stroke="LightGray" StrokeThickness="1"/>
 			<Path Data="{Binding WaveGeometry}" Stroke="Blue" StrokeThickness="2"/>
+			<TextBlock Text="1.0" Canvas.Top="35" Canvas.Left="-20" FontSize="11" Foreground="Gray"/>
+			<TextBlock Text="0" Canvas.Top="93" Canvas.Left="-20" FontSize="11" Foreground="Gray"/>
+			<TextBlock Text="-1.0" Canvas.Top="151" Canvas.Left="-25" FontSize="11" Foreground="Gray"/>
 		</Canvas>
 	</StackPanel>
 </UserControl>

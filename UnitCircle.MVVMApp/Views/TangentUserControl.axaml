@@ -20,6 +20,11 @@
 			<Line StartPoint="0, -50" EndPoint="0, 300" Stroke="LightGray" StrokeThickness="1"/>
 			<Line StartPoint="-10, 100" EndPoint="800,100" Stroke="LightGray" StrokeThickness="1"/>
 			<Path Data="{Binding WaveGeometry}" Stroke="Red" StrokeThickness="2"/>
+			<TextBlock Text="2.0" Canvas.Top="-23" Canvas.Left="-20" FontSize="11" Foreground="Gray"/>
+			<TextBlock Text="1.0" Canvas.Top="35" Canvas.Left="-20" FontSize="11" Foreground="Gray"/>
+			<TextBlock Text="0" Canvas.Top="93" Canvas.Left="-20" FontSize="11" Foreground="Gray"/>
+			<TextBlock Text="-1.0" Canvas.Top="151" Canvas.Left="-25" FontSize="11" Foreground="Gray"/>
+			<TextBlock Text="-2.0" Canvas.Top="209" Canvas.Left="-25" FontSize="11" Foreground="Gray"/>
 		</Canvas>
 	</StackPanel>
 

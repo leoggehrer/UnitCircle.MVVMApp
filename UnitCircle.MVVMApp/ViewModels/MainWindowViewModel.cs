@@ -1,6 +1,7 @@
 ﻿using Avalonia.Threading;
 using CommunityToolkit.Mvvm.Input;
 using System;
+using System.Runtime.CompilerServices;
 
 namespace UnitCircle.MVVMApp.ViewModels
 {
@@ -20,15 +21,24 @@ namespace UnitCircle.MVVMApp.ViewModels
         /// <summary>
         /// The timer used to periodically update the state of the view models.
         /// </summary>
-        private DispatcherTimer _timer;
-
+        private readonly DispatcherTimer _timer;
         /// <summary>
-        /// The view model responsible for managing the tangent visualization.
+        /// Gets or sets a value indicating whether the application is running.
         /// </summary>
-        private readonly TangentViewModel _tangentViewModel = new();
-        #endregion Fields
-
-        #region Properties
+        public bool IsRunning
+        {
+            get => _isRunning;
+            private set
+            {
+                _isRunning = value;
+                OnPropertyChanged(nameof(IsRunning));
+                OnPropertyChanged(nameof(IsNotRunning));
+            }
+        }
+        /// <summary>
+        /// Gets a value indicating whether the application is not running.
+        /// </summary>
+        public bool IsNotRunning => _isRunning == false;
         /// <summary>
         /// Gets the view model for the circle visualization.
         /// </summary>
@@ -67,7 +77,7 @@ namespace UnitCircle.MVVMApp.ViewModels
         }
         public string ToggleText
         {
-            get => _isRunning ? "Pause" : "Start";
+            get => IsRunning ? "Pause" : "Start";
         }
         #endregion Properties
 
@@ -107,8 +117,19 @@ namespace UnitCircle.MVVMApp.ViewModels
         [RelayCommand]
         public void Toggle()
         {
-            _isRunning = !_isRunning;
+            IsRunning = !IsRunning;
             OnPropertyChanged(nameof(ToggleText));
+        }
+        [RelayCommand]
+        public void Next()
+        {
+            if (IsRunning == false)
+            {
+                CircleViewModel.Tick();
+                SinusViewModel.Tick();
+                CosinusViewModel.Tick();
+                TangentViewModel.Tick();
+            }
         }
         #endregion Methods
     }
